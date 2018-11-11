@@ -1,0 +1,15 @@
+rivate void AcquireImage()
+{
+try {
+    dynamicDotNetTwain1.SelectSourceByIndex(Convert.ToInt16(cmbSource.SelectedIndex));
+    dynamicDotNetTwain1.OpenSource();
+    dynamicDotNetTwain1.IfDisableSourceAfterAcquire = true;
+     
+    dynamicDotNetTwain1.AcquireImage();
+    }
+catch (Exception exp)
+{
+    this.txtboxErrMessage.AppendText(exp.Message);
+    this.txtboxErrMessage.AppendText("\r\n");
+}
+}
